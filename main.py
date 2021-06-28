@@ -5,90 +5,91 @@ app = Flask(__name__)
 
 @app.route('/api/seasons/')
 def seasons():
-    all_seasons = {
-        1: {
+    all_seasons = [
+        {
             'id': 1,
             'urlImage': 'https://static.wikia.nocookie.net/rickandmorty/images/7/70/Rick_and_Morty_Season_1.jpg/revision/latest?cb=20161125224650',
             'title': 'Season 1'
         },
-        2: {
+        {
             'id': 2,
             'urlImage': 'https://static.wikia.nocookie.net/rickandmorty/images/d/d5/Season2.jpg/revision/latest?cb=20200718092925',
             'title': 'Season 2'
         },
-        3: {
+        {
             'id': 3,
             'urlImage': 'https://static.wikia.nocookie.net/rickandmorty/images/b/be/Season3.jpg/revision/latest?cb=20200718093040',
             'title': 'Season 3'
         },
-        4: {
+        {
             'id': 4,
             'urlImage': 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/3503/35033712_sa.jpg',
             'title': 'Season 4'
         }
-    }
-    return jsonify(seasons=all_seasons)
+    ]
+    return jsonify(all_seasons)
 
 
 @app.route('/api/seasons/<int:id>/')
 def season(id):
-    season_1 = {
-                   1: {
-                       'id': 1,
-                       'title': 'Episode 1',
-                       'urlImage': 'https://m.media-amazon.com/images/M/MV5BNzlhNGI0MTUtOWZlNS00ZmQ2LTk2NTYtMGMwMzRmOGViZWIyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1280_.jpg',
-                   },
-                   2: {
-                       'id': 3,
-                       'title': 'Episode 3',
-                       'urlImage': 'https://m.media-amazon.com/images/M/MV5BM2I0Nzg0YTktYTc2Zi00NTk4LWI5ZDQtMmVhYjBjZmRmNGM0XkEyXkFqcGdeQXVyNjg4ODczODM@._V1_FMjpg_UX1000_.jpg'
-                   }
-               },
-    season_2 = {
-                   1: {
-                       'id': 3,
-                       'title': 'Episode 3',
-                       'urlImage': 'https://m.media-amazon.com/images/M/MV5BOTExYzYxODYtOGRiMi00MzBmLTkwNzMtY2Q5ZDU2ZjdmOGZmXkEyXkFqcGdeQXVyNTkyMjE3NDU@._V1_FMjpg_UX1000_.jpg',
-                   },
-                   2: {
-                       'id': 10,
-                       'title': 'Episode 10',
-                       'urlImage': 'https://m.media-amazon.com/images/M/MV5BNmVjM2IzOTQtNzZmNi00MzFjLTg3MGUtYTIwNzk3MDBhMWEwXkEyXkFqcGdeQXVyNTkyMjE3NDU@._V1_FMjpg_UX1000_.jpg'
-                   }
-               },
-    season_3 = {
-                   1: {
-                       'id': 1,
-                       'title': 'Episode 1',
-                       'urlImage': 'https://m.media-amazon.com/images/M/MV5BMTRmYzZmZjAtOTBlMy00ODJiLTgwMzEtMTVjN2Y2NzBjYzU3XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1000_.jpg',
-                   },
-                   2: {
-                       'id': 3,
-                       'title': 'Episode 3',
-                       'urlImage': 'https://m.media-amazon.com/images/M/MV5BYWM5N2ZlMDEtNmFjZS00NDE3LWI1OWQtMGUxMzBhNzFhMTMzXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1000_.jpg',
-                   }
-               },
-    season_4 = {
-                   1: {
-                       'id': 3,
-                       'title': 'Episode 3',
-                       'urlImage': 'https://m.media-amazon.com/images/M/MV5BNTU3NjEwODQtY2JmMC00ZDUzLTkyMzgtODIwMDc0YzdhYzM2XkEyXkFqcGdeQXVyNjgzNDU2ODI@._V1_FMjpg_UX1000_.jpg',
-                   },
-                   2: {
-                       'id': 5,
-                       'title': 'Episode 5',
-                       'urlImage': 'https://m.media-amazon.com/images/M/MV5BZGM2MjFlZTAtYzEzMy00ZTc3LTliNzAtMWQ1ODBiYTVlZTZhXkEyXkFqcGdeQXVyMzQ0MTAyNjY@._V1_FMjpg_UX1000_.jpg',
-                   }
-               },
+    season_1 = [
+        {
+            'id': 1,
+            'title': 'Episode 1',
+            'urlImage': 'https://m.media-amazon.com/images/M/MV5BNzlhNGI0MTUtOWZlNS00ZmQ2LTk2NTYtMGMwMzRmOGViZWIyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1280_.jpg',
+        },
+        {
+            'id': 3,
+            'title': 'Episode 3',
+            'urlImage': 'https://m.media-amazon.com/images/M/MV5BM2I0Nzg0YTktYTc2Zi00NTk4LWI5ZDQtMmVhYjBjZmRmNGM0XkEyXkFqcGdeQXVyNjg4ODczODM@._V1_FMjpg_UX1000_.jpg'
+        }
+    ]
+    season_2 = [
+        {
+            'id': 3,
+            'title': 'Episode 3',
+            'urlImage': 'https://m.media-amazon.com/images/M/MV5BOTExYzYxODYtOGRiMi00MzBmLTkwNzMtY2Q5ZDU2ZjdmOGZmXkEyXkFqcGdeQXVyNTkyMjE3NDU@._V1_FMjpg_UX1000_.jpg',
+        },
+        {
+            'id': 10,
+            'title': 'Episode 10',
+            'urlImage': 'https://m.media-amazon.com/images/M/MV5BNmVjM2IzOTQtNzZmNi00MzFjLTg3MGUtYTIwNzk3MDBhMWEwXkEyXkFqcGdeQXVyNTkyMjE3NDU@._V1_FMjpg_UX1000_.jpg'
+        }
+    ]
 
+    season_3 = [
+        {
+            'id': 1,
+            'title': 'Episode 1',
+            'urlImage': 'https://m.media-amazon.com/images/M/MV5BMTRmYzZmZjAtOTBlMy00ODJiLTgwMzEtMTVjN2Y2NzBjYzU3XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1000_.jpg',
+        },
+        {
+            'id': 3,
+            'title': 'Episode 3',
+            'urlImage': 'https://m.media-amazon.com/images/M/MV5BYWM5N2ZlMDEtNmFjZS00NDE3LWI1OWQtMGUxMzBhNzFhMTMzXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1000_.jpg',
+        }
+    ]
+
+    season_4 = [
+        {
+            'id': 3,
+            'title': 'Episode 3',
+            'urlImage': 'https://m.media-amazon.com/images/M/MV5BNTU3NjEwODQtY2JmMC00ZDUzLTkyMzgtODIwMDc0YzdhYzM2XkEyXkFqcGdeQXVyNjgzNDU2ODI@._V1_FMjpg_UX1000_.jpg',
+        },
+        {
+            'id': 5,
+            'title': 'Episode 5',
+            'urlImage': 'https://m.media-amazon.com/images/M/MV5BZGM2MjFlZTAtYzEzMy00ZTc3LTliNzAtMWQ1ODBiYTVlZTZhXkEyXkFqcGdeQXVyMzQ0MTAyNjY@._V1_FMjpg_UX1000_.jpg',
+        }
+    ]
     if id == 1:
-        return jsonify(episodes=season_1)
+        return jsonify(season_1)
     elif id == 2:
-        return jsonify(episodes=season_2)
+        return jsonify(season_2)
     elif id == 3:
-        return jsonify(episodes=season_3)
+        return jsonify(season_3)
     elif id == 4:
-        return jsonify(episodes=season_4)
+        return jsonify(season_4)
 
 
 @app.route('/api/seasons/<int:season_id>/episode/<int:episode_id>/')
